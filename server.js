@@ -34,27 +34,25 @@ hbs.registerHelper('screamIt', (text) =>{
 });
 
  app.get('/',(request, response)=>{
-    //response.send('<h1>Hello Express..</h1>');
-    // response.send({
-    //     name:'Priyanka',
-    //     likes:[
-    //         'travelling',
-    //         'cooking'
-    //     ]
-    // });
     response.render('home.hbs',{
-        pageTitle:'Home Page ',
+        pageTitle:'Home Page',
         welcomeMessage: 'Welcome'
     });
  });
 
- app.get('/about',(req,res) =>{
+app.get('/about',(req,res) =>{
    // res.send('About Page');
    res.render('about.hbs',{
-       pageTitle:'Aboutasda '
+       pageTitle:'About'
    });
 });
 
+app.get('/projects',(req,res) =>{
+    // res.send('About Page');
+    res.render('projects.hbs',{
+        pageTitle:'Projects'
+    });
+ });
 
 app.get('/bad',(req,res) =>{
     res.send({
